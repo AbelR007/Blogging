@@ -1,0 +1,55 @@
+<!--- Refer the article here
+    abelroy.hashnode.dev/project-calculator
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Calculator Web </title>
+</head>
+<body>
+<main>
+    <input type="text" id="result">
+    <div>
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
+    </div>
+    <div>
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">-</button>
+    </div>
+    <div>
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">x</button>
+    </div>
+    <div>
+        <button onclick="append('0')">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="cleara()">Clear</button>
+    </div>
+</main>
+<script>
+const result = document.getElementById('result');
+function append(value){
+    result.value += value;
+}
+
+function calculate() {
+    try {
+        result.value = eval(result.value);
+    } catch(error) {
+        result.value = "Error";
+    }
+}
+
+function cleara(){
+    result.value = "";
+}
+</script>
+</body>
+</html>
